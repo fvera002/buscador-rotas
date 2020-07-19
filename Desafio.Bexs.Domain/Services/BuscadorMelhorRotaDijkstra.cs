@@ -11,11 +11,11 @@ namespace Desafio.Bexs.Domain.Services
 {
     public class BuscadorMelhorRotaDijkstra : IBuscadorMelhorRota
     {
-        public MelhorRota BuscarMelhorRota(Aeroporto origem, Aeroporto destino)
+        public MelhorRotaDto BuscarMelhorRota(Aeroporto origem, Aeroporto destino)
         {
             var controle = new ControleDijkstraHelper();
 
-            controle.AtualizarPreco(origem, new MelhorPreco(null, 0));
+            controle.AtualizarPreco(origem, new MelhorPrecoDto(null, 0));
             controle.AgendarVerificacao(origem);
 
             while (controle.AguardaVerificacao)
@@ -36,7 +36,7 @@ namespace Desafio.Bexs.Domain.Services
                     
                     if (precoConexao.Valor > precoProvavelAtual)
                     {
-                        controle.AtualizarPreco(conexaoInfo.Aeroporto, new MelhorPreco(aeroportoAtual, precoProvavelAtual));
+                        controle.AtualizarPreco(conexaoInfo.Aeroporto, new MelhorPrecoDto(aeroportoAtual, precoProvavelAtual));
                     }
                 }
             }

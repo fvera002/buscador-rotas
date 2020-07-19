@@ -10,6 +10,6 @@ namespace Desafio.Bexs.Domain.Interfaces
         void CarregarTodasRotas();
         void CadastrarNovaRota(RotaDto rotaDto);
 
-        MelhorRota BuscarMelhorNota(string aeroportoOrigemId, string aeroportoDestinoId);
+        MelhorRotaDto BuscarMelhorNota(string aeroportoOrigemId, string aeroportoDestinoId);
     }
 }

@@ -18,9 +18,9 @@ namespace Desafio.Bexs.Domain.Models
         }
         public IEnumerable<Rota> Rotas => _rotas;
 
-        public IEnumerable<ConexaoInfo> Conexoes =>
+        public IEnumerable<ConexaoInfoDto> Conexoes =>
             from rota in Rotas
-            select new ConexaoInfo(
+            select new ConexaoInfoDto(
                 rota.AeroportoOrigem == this ? rota.AeroportoDestino : rota.AeroportoOrigem,
                 rota.Preco
                 );

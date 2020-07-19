@@ -14,8 +14,9 @@ namespace Desafio.Bexs.Console
     {
         static void Main(string[] args)
         {
-            var services = new ServiceCollection();
-            services.ConfigureDomainServices(args);
+            var services = new ServiceCollection()
+                .ConfiguraDataFile(args)
+                .ConfigureDomainServices();
             var serviceProvider = services.BuildServiceProvider();
             var rotaService = serviceProvider.GetService<IRotaService>();
 

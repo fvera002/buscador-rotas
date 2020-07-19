@@ -8,6 +8,6 @@ namespace Desafio.Bexs.Domain.Interfaces
 {
     public interface IBuscadorMelhorRota
     {
-        MelhorRota BuscarMelhorRota(Aeroporto origem, Aeroporto destino);
+        MelhorRotaDto BuscarMelhorRota(Aeroporto origem, Aeroporto destino);
     }
 }

@@ -48,11 +48,11 @@ namespace Desafio.Bexs.Domain.Services
             _rotaRepository.Inserir(item);
         }
 
-        public MelhorRota BuscarMelhorNota(string aeroportoOrigemId, string aeroportoDestinoId)
+        public MelhorRotaDto BuscarMelhorNota(string aeroportoOrigemId, string aeroportoDestinoId)
         {
             var aeroportoOrigem = _aeroportoRepository.Buscar(aeroportoOrigemId);
             var aeroportoDestino = _aeroportoRepository.Buscar(aeroportoDestinoId);
-            const string mensagemRotaNaoEncontrada = "no route found";
+            const string mensagemRotaNaoEncontrada = "route not found";
 
             if (aeroportoOrigem == null || aeroportoDestino == null)
             {
@@ -63,7 +63,7 @@ namespace Desafio.Bexs.Domain.Services
 
             if (melhorRota.Aeroportos.Any())
             {
-                melhorRota.Descricao = $"best route: {string.Join('-', melhorRota.Aeroportos)} > {melhorRota.PrecoTotalRota}";
+                melhorRota.Descricao = $"best route: {string.Join('-', melhorRota.Aeroportos)} > ${melhorRota.PrecoTotalRota}";
             }
             else
             {

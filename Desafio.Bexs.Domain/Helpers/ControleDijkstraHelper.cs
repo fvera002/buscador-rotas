@@ -9,7 +9,7 @@ namespace Desafio.Bexs.Domain.Helpers
     public class ControleDijkstraHelper
     {
         private readonly List<Aeroporto> _aeroportosVerificados = new List<Aeroporto>();
-        private readonly Dictionary<Aeroporto, MelhorPreco> _precosPorRota =new Dictionary<Aeroporto, MelhorPreco>();
+        private readonly Dictionary<Aeroporto, MelhorPrecoDto> _precosPorRota =new Dictionary<Aeroporto, MelhorPrecoDto>();
         private readonly List<Aeroporto> _aeroportosAguardandoVerificacao = new List<Aeroporto>();
 
         public void Verificar(Aeroporto aeroporto)
@@ -25,7 +25,7 @@ namespace Desafio.Bexs.Domain.Helpers
             return _aeroportosVerificados.Contains(aeroporto);
         }
 
-        public void AtualizarPreco(Aeroporto aeroporto, MelhorPreco novoPreco)
+        public void AtualizarPreco(Aeroporto aeroporto, MelhorPrecoDto novoPreco)
         {
             if (!_precosPorRota.ContainsKey(aeroporto))
             {
@@ -37,12 +37,12 @@ namespace Desafio.Bexs.Domain.Helpers
             }
         }
 
-        public MelhorPreco BuscarMelhorPreco(Aeroporto aeroporto)
+        public MelhorPrecoDto BuscarMelhorPreco(Aeroporto aeroporto)
         {
-            MelhorPreco result;
+            MelhorPrecoDto result;
             if (!_precosPorRota.ContainsKey(aeroporto))
             {
-                result = new MelhorPreco(null, int.MaxValue);
+                result = new MelhorPrecoDto(null, int.MaxValue);
                 _precosPorRota.Add(aeroporto, result);
             }
             else
@@ -75,10 +75,10 @@ namespace Desafio.Bexs.Domain.Helpers
             return BuscarMelhorPreco(aeroporto).AeroportoOrigem != null;
         }
 
-        public MelhorRota ComputarMelhorRotaParaOrigem(Aeroporto aeroporto)
+        public MelhorRotaDto ComputarMelhorRotaParaOrigem(Aeroporto aeroporto)
         {
             var n = aeroporto;
-            var melhorRota = new MelhorRota();
+            var melhorRota = new MelhorRotaDto();
             while (n != null)
             {
                 var preco = BuscarMelhorPreco(n);

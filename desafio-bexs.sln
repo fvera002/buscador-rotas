@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Bexs.Infra.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Bexs.Infra.IoC", "Desafio.Bexs.Infra.IoC\Desafio.Bexs.Infra.IoC.csproj", "{671534BC-16F6-40E9-853F-EB893BF3B30B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Bexs.Api", "Desafio.Bex.Api\Desafio.Bexs.Api.csproj", "{13E9F59F-2F0E-4F13-B1CB-77D2A5DE546D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{671534BC-16F6-40E9-853F-EB893BF3B30B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{671534BC-16F6-40E9-853F-EB893BF3B30B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{671534BC-16F6-40E9-853F-EB893BF3B30B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E9F59F-2F0E-4F13-B1CB-77D2A5DE546D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E9F59F-2F0E-4F13-B1CB-77D2A5DE546D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E9F59F-2F0E-4F13-B1CB-77D2A5DE546D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E9F59F-2F0E-4F13-B1CB-77D2A5DE546D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

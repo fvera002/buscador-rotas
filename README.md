@@ -61,7 +61,7 @@ Em caso de parâmetros inválidos, a API retornará o statusCode 400 e o body co
 }
 ```
 
-* `POST /api/Rotas`: endpoint que realizará cadastro de melhor rota. É obrigatório informar os parâmetros `aeroportoOrigemId`, `aeroportoDestinoId` e `preco` no body json. Por exemplo:
+* `POST /api/Rotas`: endpoint que realizará cadastro de nova rota. É obrigatório informar os parâmetros `aeroportoOrigemId`, `aeroportoDestinoId` e `preco` no body json. Por exemplo:
 ```json
 {
   "preco": 200,
@@ -69,7 +69,7 @@ Em caso de parâmetros inválidos, a API retornará o statusCode 400 e o body co
   "aeroportoDestinoId": "LAX"
 }
 ```
-Para rotas válidas, a API deve retornar statusCode 201 e o body deve conter os mesmos dados de entrada com adição do Id. Por exemplo:
+Para rotas cadastradas com sucesso, a API deve retornar statusCode 201 e o body deve conter os mesmos dados de entrada com adição do Id. Por exemplo:
 ```json
 {
   "id": "GRU-LAX",

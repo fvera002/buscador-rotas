@@ -35,7 +35,7 @@ namespace Desafio.Bexs.Data.Repositories
 
         public void Inserir(RotaDto rota)
         {
-            File.AppendAllLines(_arquivoRotas,new string[]{ $"{rota.AeroportoOrigemId},{rota.AeroportoDestinoId},{rota.Preco}" });
+            File.AppendAllText(_arquivoRotas, $"\n{rota.AeroportoOrigemId},{rota.AeroportoDestinoId},{rota.Preco}");
         }
     }
 }

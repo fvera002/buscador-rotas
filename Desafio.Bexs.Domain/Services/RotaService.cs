@@ -61,7 +61,7 @@ namespace Desafio.Bexs.Domain.Services
 
             var melhorRota = _buscadorMelhorRota.BuscarMelhorRota(aeroportoOrigem, aeroportoDestino);
 
-            if (melhorRota.Aeroportos.Any())
+            if (melhorRota != null && melhorRota.Aeroportos.Any())
             {
                 melhorRota.Descricao = $"best route: {string.Join('-', melhorRota.Aeroportos)} > ${melhorRota.PrecoTotalRota}";
             }

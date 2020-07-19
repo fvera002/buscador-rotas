@@ -8,25 +8,24 @@ using Desafio.Bexs.Domain.Dtos;
 using Desafio.Bexs.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Desafio.Bex.Api.Controllers
+namespace Desafio.Bexs.Api.Controllers
 {
     [TypeFilter(typeof(CustomExceptionFilter))]
     [Route("api/[controller]")]
     [ApiController]
-    public class RotasController : ControllerBase
+    public class MelhorRotaController : ControllerBase
     {
         private readonly IRotaService _rotaService;
 
-        public RotasController(IRotaService rotaService)
+        public MelhorRotaController(IRotaService rotaService)
         {
             _rotaService = rotaService;
         }
 
-        [HttpPost]
-        public RotaDto CadastrarRota([FromBody] RotaDto rotaDto)
+        [HttpGet]
+        public MelhorRotaDto BuscarMelhorRota([FromQuery, Required] string aeroportoOrigemId, [FromQuery, Required] string aeroportoDestinoId)
         {
-            _rotaService.CadastrarNovaRota(rotaDto);
-            return rotaDto;
+            return _rotaService.BuscarMelhorNota(aeroportoOrigemId, aeroportoDestinoId);
         }
     }
 }

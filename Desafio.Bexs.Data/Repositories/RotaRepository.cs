@@ -23,6 +23,11 @@ namespace Desafio.Bexs.Data.Repositories
 
             foreach (var item in linhas)
             {
+                if(string.IsNullOrEmpty(item))
+                {
+                    continue;
+                }
+
                 var campos = item.Split(',');
                 yield return new RotaDto 
                 { 

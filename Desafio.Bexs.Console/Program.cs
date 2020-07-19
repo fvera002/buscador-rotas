@@ -32,11 +32,19 @@ namespace Desafio.Bexs.Console
             while(input != "exit")
             {
                 var ids = input.Split('-');
-                var melhorCaminho = djstra.BuscarMelhorNota(ids[0], ids[1]);
 
-                if (melhorCaminho != null)
+                if(ids == null || ids.Count() < 2)
                 {
-                    System.Console.WriteLine(melhorCaminho.Descricao);
+                    System.Console.WriteLine("invalid input");
+                }
+                else
+                {
+                    var melhorCaminho = djstra.BuscarMelhorNota(ids[0], ids[1]);
+
+                    if (melhorCaminho != null)
+                    {
+                        System.Console.WriteLine(melhorCaminho.Descricao);
+                    }
                 }
 
                 System.Console.Write("please enter the route: ");

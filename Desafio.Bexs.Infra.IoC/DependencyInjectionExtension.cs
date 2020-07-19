@@ -5,6 +5,7 @@ using Desafio.Bexs.Domain.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace Desafio.Bexs.Infra.IoC
 {
@@ -31,14 +32,12 @@ namespace Desafio.Bexs.Infra.IoC
 
         private static string GetDataFile(string[] args)
         {
-            var dataFile = args[0];
-
-            if (string.IsNullOrEmpty(dataFile) || !File.Exists(dataFile))
+            if (args == null || args.Count() < 1 || string.IsNullOrEmpty(args[0]) || !File.Exists(args[0]))
             {
                 throw new ArgumentException("Routes data file not found");
             }
 
-            return dataFile;
+            return args[0];
         }
     }
 }
